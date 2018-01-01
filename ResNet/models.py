@@ -39,10 +39,6 @@ numpy.random.seed(seed)
 
 def plot_roc(df, y_true):
     
-    #### change color for curves ## tried but failed
-    #num_plots = 13
-
-    ## Have a look at the colormaps here and decide which one you'd like:
     ## http://matplotlib.org/1.2.1/examples/pylab_examples/show_colormaps.html
     #colormap = plt.cm.gist_ncar
     #plt.gca().set_color_cycle([colormap(i) for i in np.linspace(0, 0.9, num_plots)])
@@ -128,17 +124,6 @@ class CNN_Model(object):
                              'xpreppi_counts', 'xubiquitination',
                              'RVIS', 'xobs_exp', 'mis_badness', 'MPC', 'REVEL'}
 
-        # self.exclude_cols = {'target', 'CADD_phred', 'Eigen-phred', 'Eigen-PC-phred',
-        #                      'Eigen-PC-raw_rankscore', 'MetaSVM_rankscore',
-        #                      'MetaLR_rankscore', 'M-CAP_rankscore', 'DANN_rankscore',
-        #                      'CADD_raw_rankscore', 'Polyphen2_HVAR_rankscore',
-        #                      'MutationTaster_converted_rankscore',
-        #                      '#chr', 'pos(1-based)',  'ref', 'alt', 'category',
-        #                      'source', 'INFO', 'disease', 'genename',
-        #                      'xpli', 'xlofz', 
-        #                      'x1000Gp3_AF', 'xExAC_AF',
-        #                      'xFATHMM_converted_rankscore', 'xfathmm-MKL_coding_rankscore',
-        #                      'xpreppi_counts', 'xubiquitination'}
     def _load_data(self, sub_sample=False):
         '''load data are not in exclude_cols into self.X_pred, 
            feathers to self.X_train
